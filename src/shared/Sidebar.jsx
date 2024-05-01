@@ -13,49 +13,55 @@ const linkClass =
 
 export default function Sidebar() {
   return (
-    <div className='bg-white w-60 flex flex-col p-[2.25rem]'>
-      <div className='flex items-center gap-2 py-3'>
-        <PiStack size={20} color='#b66dff' />
-        <span className='text-sideNavColor font-bold text-lg'>
-          React Collections
-        </span>
-      </div>
-      <div className='py-8 flex flex-1 flex-col gap-0.5'>
-        {/* {DASHBOARD_SIDEBAR_LINKS.map((link) => (
+    <div className='hidden md:block'>
+      <div className='bg-white md:block md:w-60 flex flex-col p-[2.25rem]'>
+        <div className='flex items-center gap-2 py-3'>
+          <PiStack size={20} color='#b66dff' />
+          <span className='text-sideNavColor font-bold text-lg'>
+            React Collections
+          </span>
+        </div>
+        <div className='py-8 flex flex-1 flex-col gap-0.5'>
+          {/* {DASHBOARD_SIDEBAR_LINKS.map((link) => (
           <SidebarLink key={link.key} link={link} />
         ))} */}
-        <SidebarLink
-          link={{ label: 'Dashboard', path: '/', icon: <HiOutlineViewGrid /> }}
-        />
-        <div
-          id='sidebarCollapse'
-          className='collapse collapse-arrow bg-base-200 transition-none'
-        >
-          <input type='checkbox' />
-          <div className='collapse-title flex p-0'>
-            <div className='flex items-center justify-between w-full gap-2'>
-              <span className={`text-[.875rem] text-sideNavColor`}>
-                Components
-              </span>
-              <HiOutlineViewGrid />
+          <SidebarLink
+            link={{
+              label: 'Dashboard',
+              path: '/',
+              icon: <HiOutlineViewGrid />,
+            }}
+          />
+          <div
+            id='sidebarCollapse'
+            className='collapse collapse-arrow bg-base-200 transition-none'
+          >
+            <input type='checkbox' />
+            <div className='collapse-title flex p-0'>
+              <div className='flex items-center justify-between w-full gap-2'>
+                <span className={`text-[.875rem] text-sideNavColor`}>
+                  Components
+                </span>
+                <HiOutlineViewGrid />
+              </div>
+            </div>
+            <div className='collapse-content'>
+              {DASHBOARD_SIDEBAR_LINKS[0].children.map((link) => (
+                <SidebarChildren key={link.key} link={link} />
+              ))}
             </div>
           </div>
-          <div className='collapse-content'>
-            {DASHBOARD_SIDEBAR_LINKS[0].children.map((link) => (
-              <SidebarChildren key={link.key} link={link} />
-            ))}
-          </div>
         </div>
-      </div>
-      <div className='flex flex-col gap-0.5 pt-2 border-t border-neutral-700'>
-        {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => (
-          <SidebarLink key={link.key} link={link} />
-        ))}
-        <div className={classNames(linkClass, 'cursor-pointer text-red-500')}>
-          <span className='text-xl'>
-            <HiOutlineLogout />
-          </span>
-          Logout
+        <div className='flex flex-col gap-0.5 pt-2 border-t border-neutral-700'>
+          {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => (
+            <SidebarLink key={link.key} link={link} />
+          ))}
+          <div className={classNames(linkClass, 'cursor-pointer text-red-500')}>
+            <span className='text-xl'>
+              <HiOutlineLogout />
+            </span>
+            Logout
+          </div>
         </div>
       </div>
     </div>

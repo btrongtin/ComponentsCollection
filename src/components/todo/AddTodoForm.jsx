@@ -25,7 +25,7 @@ const AddTodoForm = ({ addNewTodo }) => {
         onChange={handleTodoChange}
       />
       <button
-        className='btn btn-primary ml-2 text-[#fff] bg-gradient-to-tr from-[#da8cff] to-[#9a55ff] px-10 py-2 rounded-none'
+        className='btn btn-primary ml-2 text-[#fff] bg-gradient-to-tr from-[#da8cff] to-[#9a55ff] px-10 py-2 rounded-none hover:opacity-80'
         onClick={handleAddNewTodo}
       >
         Add
