@@ -1,17 +1,27 @@
 import { CiCircleRemove } from 'react-icons/ci';
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, toggleTodoStatus, removeTodo }) => {
   return (
     <li className='flex items-center mb-2 py-2'>
       <input
         type='checkbox'
         className='checkbox checkbox-sm checkbox-primary [--chkfg:white] mr-3 rounded-none'
-        // checked={todo.isCompleted}
+        defaultChecked={todo.isCompleted}
+        onChange={() => toggleTodoStatus(todo.id)}
+        id={`todoCheckbox-${todo.id}`}
       />
-      <span className='text-[#343a40] text-sm font-normal'>
+      <label
+        htmlFor={`todoCheckbox-${todo.id}`}
+        className={`text-[#343a40] text-sm font-normal ${
+          todo.isCompleted ? 'line-through' : ''
+        }`}
+      >
         {todo.description}
-      </span>
-      <span className='ml-auto text-2xl cursor-pointer text-sideNavChildColor font-bold'>
+      </label>
+      <span
+        className='ml-auto text-2xl cursor-pointer text-[rgb(214,35,35)] font-bold'
+        onClick={() => removeTodo(todo.id)}
+      >
         <CiCircleRemove />
       </span>
     </li>
