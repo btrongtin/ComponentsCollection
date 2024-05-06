@@ -30,9 +30,9 @@ export const DASHBOARD_SIDEBAR_LINKS = [
         icon: <FaArrowRight />,
       },
       {
-        key: 'customers',
-        label: 'Customers',
-        path: '/customers',
+        key: 'imagesGallery',
+        label: 'Images Gallery',
+        path: '/components/imagesgallery',
         icon: <FaArrowRight />,
       },
       {
@@ -65,3 +65,25 @@ export const DASHBOARD_SIDEBAR_BOTTOM_LINKS = [
     icon: <HiOutlineQuestionMarkCircle />,
   },
 ];
+
+const galleryImagesNames = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+];
+export const IMAGES_GALLERY_DATA = galleryImagesNames.map((item) => ({
+  id: item,
+  src: `/assets/images/gallery/${item}.jpg`,
+}));

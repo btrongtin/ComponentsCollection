@@ -5,6 +5,7 @@ import Dashboard from '../pages/Dashboard';
 import Tab from '../pages/Tab';
 import Todo from '../pages/Todo';
 import Carousel from '../pages/Carousel';
+import ImagesGallery from '../pages/ImagesGallery';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/components/carousel',
         element: <Carousel />,
+      },
+      {
+        path: '/components/imagesgallery',
+        element: <ImagesGallery />,
       },
     ],
   },
