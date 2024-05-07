@@ -1,16 +1,16 @@
 import React from 'react';
 
-const ImageItem = ({ imageSource, imageId, handleImageClick }) => {
-  const handleSelectImage = () => {
-    handleImageClick(imageId);
+const ImageItem = ({ image, index, handleImageClick }) => {
+  const handleClick = () => {
+    handleImageClick(image, index);
   };
 
   return (
-    <li className='h-[30vh] flex-grow' onClick={handleSelectImage}>
+    <li className='h-[30vh] flex-grow' onClick={handleClick}>
       <img
-        src={imageSource}
+        src={image.src}
         className='max-h-full min-w-full object-cover'
-        alt={imageId}
+        alt={image.id}
       />
     </li>
   );
